@@ -22,6 +22,7 @@ class Works:
         self.oaid = oaid
         self.req = requests.get(f"https://api.openalex.org/works/{oaid}")
         self.data = self.req.json()
+        self.url = f"https://doi.org/{doi}"
 
     def bibtex(self):
         """
