@@ -6,9 +6,11 @@ from setuptools import setup
 
 setup(name='openalex',
       version='0.0.1',
+      
       description='bibtex and ris utilities',
       maintainer='saaksshi',
       maintainer_email='sjilhewa@andrew.cmu.edu',
+      setup_requires=[IPython]
       license='MIT',
       packages=['openalex'],
       scripts=[],
