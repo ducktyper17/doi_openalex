@@ -52,7 +52,7 @@ class Works:
         year = self.data['publication_year']
 
         seq = (
-            f'\nauthor = {authors},\n'
+            f'author = {authors},\n'
             f'title = {title},\n'
             f'volume = {volume},\n'
             f'number = {issue},\n'
