@@ -5,7 +5,7 @@ This module creates a RIS and BibTex command line interface.
 #!/usr/bin/env python3
 
 import click
-from .citation_shark import Works
+from .works import Works
 
 
 @click.command()
