@@ -1,3 +1,3 @@
 # doi_openalex
 A small Python package for OpenAlex with methods to get an RIS and a bibtex entry for a DOI. 
-![pytest](https://github.com/ducktyper17/doi_openalex/tree/main/.github/workflows/pytest.yml)
+![pytest](https://github.com/ducktyper17/doi_openalex/tree/main/.github/workflows/pytest.yml/badge.svg)
