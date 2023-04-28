@@ -1,12 +1,12 @@
-name: tests
+name: pytest
 on: push
 
 jobs:
-
-  test_job:
+        
+  pytest:
     runs-on: ubuntu-latest
     steps:      
       - uses: actions/checkout@v3
       - run: |
-          pip install pytest
-          pytest pkg
+          pip install requests click pytest
+          pytest -v pkg/test.py
