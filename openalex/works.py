@@ -1,78 +1,35 @@
 """
-Module for working with scholarly works from the OpenAlex API.
+This file enables a user to pass in a DOI
+and get both the RIS and Bibtex citations
+printed.
 """
+
 import requests
+
 
 class Works:
     """
-    A class representing a scholarly work.
-
-    Attributes:
-        oaid (str): The OpenAlex identifier of the work.
-        data (dict): The JSON data for the work obtained from the OpenAlex API.
+    This class prints out RIS or BibTex format citation.
     """
 
-    def __init__(self, oaid):
-        """
-        Constructs a new Works object.
-
-        Args:
-            oaid (str): The OpenAlex identifier of the work.
-        """
-        self.oaid = oaid
-        self.req = requests.get(f"https://api.openalex.org/works/{oaid}")
-        self.data = self.req.json()
+    def __init__(self, doi):
+        self.doi = doi
         self.url = f"https://doi.org/{doi}"
 
-    def bibtex(self):
+    def get_bibtex(self):
         """
-        Returns the BibTeX string for the work.
-
-        Returns:
-            str: The BibTeX string.
+        Outputs BibTeX for a given DOI. ChatGPT 4 assisted
+        me in writing this function.
         """
-        _authors = [au["author"]["display_name"] for au in self.data["authorships"]]
-        if len(_authors) == 1:
-            authors = _authors[0]
-        else:
-            authors = ", ".join(_authors[0:-1]) + " and" + _authors[-1]
+        headers = {"Accept": "application/x-bibtex"}
+        response = requests.get(self.url, headers=headers)
+        return response.text
 
-        title = self.data["title"]
-
-        volume = self.data["biblio"]["volume"]
-
-        issue = self.data["biblio"]["issue"]
-        if issue is None:
-            issue = ", "
-        else:
-            issue = ", " + issue
-
-        pages = "-".join(
-            [self.data["biblio"]["first_page"], self.data["biblio"]["last_page"]]
-        )
-        year = self.data["publication_year"]
-
-        seq = (
-            f"\nauthor = {authors},\n"
-            f"title = {title},\n"
-            f"volume = {volume},\n"
-            f"number = {issue},\n"
-            f"pages = {pages},\n"
-            f"year = {year},\n"
-            f'doi = "{self.data["doi"]}",\n'
-            f'url = "{self.oaid}",\n'
-            f'DATE_ADDED = {self.data["updated_date"]}'
-        )
-
-        return seq
-
-    def ris(self):
+    def get_ris(self):
         """
-        Returns the ris  for the work.
-
-        Returns:
-            html: The ris string.
+        Outputs RIS for a given DOI. ChatGPT 4 assisted
+        me in writing this function.
         """
-        fheaders = {"Accept": "application/x-research-info-systems"}
+        headers = {"Accept": "application/x-research-info-systems"}
         response = requests.get(self.url, headers=headers)
         return response.text
