@@ -3,6 +3,7 @@ Tests to ensure both RIS and BibTex versions
 of CitationShark are working properly.
 """
 import re
+from Ipython.display import HTML
 from .works import Works
 
 ref_ris = """TY  - JOUR
