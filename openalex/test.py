@@ -1,6 +1,5 @@
 """
-Tests to ensure both RIS and BibTex versions
-of CitationShark are working properly.
+Tests to ensure both RIS and BibTex version.
 """
 import re
 from Ipython.display import HTML
