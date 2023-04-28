@@ -12,4 +12,7 @@ setup(name='openalex',
       license='MIT',
       packages=['openalex'],
       scripts=[],
-      long_description='''assignment''')
+      entry_points={
+        "console_scripts": ["cite = pkg.cmdline:cite"]
+    },
+      long_description='''to get citations bibtex/ris''')
