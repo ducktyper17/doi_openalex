@@ -43,6 +43,7 @@ class Works:
         volume = self.data['biblio']['volume']
 
         issue = self.data['biblio']['issue']
+        journal = self.data['display_name']
         if issue is None:
             issue = ', '
         else:
@@ -52,15 +53,13 @@ class Works:
         year = self.data['publication_year']
 
         seq = (
-            f'author = {authors},'\n
-            f'title = {title},'\n
-            f'volume = {volume},'\n
-            f'number = {issue},'\n
-            f'pages = {pages},'\n
-            f'year = {year},'\n
-            f'doi = "{self.data["doi"]}",'\n
-            f'url = "{self.oaid}",'\n
-            f'DATE_ADDED = {self.data["updated_date"]}'
+            f'author = {authors},'
+            f'journal = {journal}
+            f'title = {title},'
+            f'volume = {volume},'
+            f'number = {issue},'
+            f'pages = {pages},'
+            f'year = {year},'
         )
 
         return seq
