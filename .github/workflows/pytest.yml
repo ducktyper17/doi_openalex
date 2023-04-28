@@ -8,6 +8,5 @@ jobs:
     steps:      
       - uses: actions/checkout@v3
       - run: |
-          pip install requests click pytest
-          pip install ipython
+          pip install requests click pytest ipython
           pytest -v openalex/test.py
