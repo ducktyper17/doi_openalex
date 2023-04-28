@@ -13,6 +13,6 @@ setup(name='openalex',
       packages=['openalex'],
       scripts=[],
       entry_points={
-        "console_scripts": ["cite = pkg.cmdline:cite"]
+        "console_scripts": ["cite = openalex.cmdline:cite"]
     },
       long_description='''to get citations bibtex/ris''')
