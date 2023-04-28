@@ -6,7 +6,6 @@ printed.
 
 import requests
 
-
 class Works:
     """
     This class prints out RIS or BibTex format citation.
@@ -23,6 +22,12 @@ class Works:
         """
         headers = {"Accept": "application/x-bibtex"}
         response = requests.get(self.url, headers=headers)
+        with open('ref.bib', 'w') as bibfile:
+            bibfile.write(bibtex) 
+
+        with open('ref.bib') as bibtex_file:
+            bib_database = bibtexparser.load(bibtex_file)
+            entries = bib_database.entries
         return response.text
 
     def ris(self):
@@ -33,3 +38,5 @@ class Works:
         headers = {"Accept": "application/x-research-info-systems"}
         response = requests.get(self.url, headers=headers)
         return response.text
+    
+        
