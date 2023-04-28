@@ -16,7 +16,7 @@ class Works:
         self.doi = doi
         self.url = f"https://doi.org/{doi}"
 
-    def get_bibtex(self):
+    def bibtex(self):
         """
         Outputs BibTeX for a given DOI. ChatGPT 4 assisted
         me in writing this function.
@@ -25,7 +25,7 @@ class Works:
         response = requests.get(self.url, headers=headers)
         return response.text
 
-    def get_ris(self):
+    def ris(self):
         """
         Outputs RIS for a given DOI. ChatGPT 4 assisted
         me in writing this function.
