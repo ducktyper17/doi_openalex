@@ -23,7 +23,33 @@ class Works:
         """
         self.oaid = oaid
         self.req = requests.get(f'https://api.openalex.org/works/{oaid}')
-        self.data = self.req.json()
+        self.data = self.req.json
+        
+    def new_test(self):
+        _authors = [au['author']['display_name'] for au in self.data['authorships']]
+        if len(_authors) == 1:
+            author = _authors[0]
+        else:
+            author = ', '.join(_authors[0:-1]) + ' and' + _authors[-1]
+            
+        title = self.data['title']
+        journal = self.data['host_venue']['display_name']
+        volume = self.data['biblio']['volume']
+        issue = self.data['biblio']['issue']
+        pages = '-'.join([self.data['biblio']['first_page'], self.data['biblio']['last_page']])
+        year = self.data['publication_year']
+        citedby = self.data['cited_by_count']
+        date_added = self.data['updated_date']
+        doi = self.data['doi']
+        number = issue
+        oa = self.data['id']
+        url = self.oaid
+        date_added = self.data['updated_date']
+        doi = self.data['doi']
+        number = issue
+
+        bibtex = f"author = {author}"
+        
 
     def bibtex(self):
         _authors = [au['author']['display_name'] for au in self.data['authorships']]
@@ -48,7 +74,12 @@ class Works:
         doi = self.data['doi']
         number = issue
 
-        bibtex = f"""author = {author}, journal = {journal}, title = {title}, volume = {volume}, issue = {issue}, pages = {pages}, year = {year}"""
+        bibtex = f"""author = {author}, 
+        journal = {journal}, 
+        title = {title}, 
+        volume = {volume}, 
+        issue = {issue}, 
+        pages = {pages}, year = {year}"""
  
         return bibtex
               
