@@ -4,7 +4,6 @@ Module for working with scholarly works from the OpenAlex API.
 
 import base64
 import requests
-from IPython.display import HTML
 
 class Works:
     """
@@ -59,7 +58,7 @@ class Works:
         year = self.data['publication_year']
 
         seq = (
-            f'\nauthor = {authors},\n'
+            f'author = {authors},\n'
             f'title = {title},\n'
             f'volume = {volume},\n'
             f'number = {issue},\n'
@@ -105,5 +104,5 @@ class Works:
             ris64 = base64.b64encode(ris.encode('utf-8')).decode('utf8')
             uri = (f'<pre>{ris}<pre><br>'
                    f'<a href="data:text/plain;base64,{ris64}" download="ris">Download RIS</a>')
-            return HTML(uri)
+            return uri
             
