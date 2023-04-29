@@ -4,4 +4,4 @@ A small Python package for OpenAlex with methods to get an RIS and a bibtex entr
 <br>
 #### installation instructions:
 `!git clone https://github.com/ducktyper17/doi_openalex`<br>
-`pip install doi_openalex`
+`!pip install doi_openalex`
