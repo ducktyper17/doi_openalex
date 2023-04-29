@@ -77,8 +77,8 @@ class Works:
 
         bibtex = f"""author = {author}, 
         journal = {journal}, 
-        title = {title}, 
-        volume = {volume}, 
+        title = {title},
+        volume = {volume},
         issue = {issue}, 
         pages = {pages}, year = {year}"""
  
