@@ -4,7 +4,7 @@ Module for working with scholarly works from the OpenAlex API.
 
 import base64
 import requests
-import bibtexparser
+
 class Works:
     """
     A class representing a scholarly work.
@@ -58,14 +58,8 @@ class Works:
           year = {{{year}}}
         }}
         """
-        with open('rer.bib', 'w') as bibfile:
-            bibfile.write(bibtex) 
-
-        with open('rer.bib') as bibtex_file:
-            bib_database = bibtexparser.load(bibtex_file)
-            entries = bib_database.entries
-        
-        return entries
+ 
+        return bibtex
               
 
             
