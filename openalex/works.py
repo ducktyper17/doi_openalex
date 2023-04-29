@@ -26,7 +26,7 @@ class Works:
         self.data = self.req.json
        
     def bibtex(self):
-        _authors = [au['author']['display_name'] for au in self.data['authorships']]
+        _authors = ['author']['display_name']
         if len(_authors) == 1:
             author = _authors[0]
         else:
