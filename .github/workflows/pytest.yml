@@ -1,0 +1,12 @@
+name: pytest
+on: push
+
+jobs:
+        
+  pytest:
+    runs-on: ubuntu-latest
+    steps:      
+      - uses: actions/checkout@v3
+      - run: |
+          pip install requests click pytest
+          pytest -v openalex/test.py
