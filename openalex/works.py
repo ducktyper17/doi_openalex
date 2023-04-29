@@ -48,8 +48,7 @@ class Works:
         doi = self.data['doi']
         number = issue
 
-        bibtex = f"""@article{{sample_paper,
-          author = {{{author}}},
+        bibtex = f"""author = {{{author}}},
           journal = {{{journal}}},
           title = {{{title}}},
           volume = {{{volume}}},
