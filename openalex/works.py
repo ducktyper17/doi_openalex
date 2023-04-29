@@ -71,7 +71,7 @@ class Works:
         )
 
         return seq
-        def ris(self):
+    def ris(self):
         """
         Returns the ris  for the work.
 
