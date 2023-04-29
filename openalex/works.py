@@ -27,6 +27,12 @@ class Works:
         self.data = self.req.json()
 
     def new(self):
+        """
+        A class to check test function.
+
+        Returns:
+            str: Returns title.
+        """
         titles = self.data["title"]
         return titles
 
