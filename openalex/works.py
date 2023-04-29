@@ -105,12 +105,11 @@ class Works:
         fields += [f'SP  - {self.data["biblio"]["first_page"]}']
         fields += [f'EP  - {self.data["biblio"]["last_page"]}']
         fields += [f'DO  - {self.data["doi"]}']
-        fields += ["ER  -"]
-
+     
         ris = "\n".join(fields)
         ris64 = base64.b64encode(ris.encode("utf-8")).decode("utf8")
         uri = (
             f"<pre>{ris}<pre><br>"
             f'<a href="data:text/plain;base64,{ris64}" download="ris">Download RIS</a>'
         )
-        return uri
+        return ris
