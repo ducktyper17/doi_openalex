@@ -15,4 +15,5 @@ ref_bibtex = """author = {John R. Kitchin},
 def test_bibtex():
     w = Works("https://doi.org/10.1021/acscatal.5b00538")
     assert ref_bibtex == w.bibtex()
+   
 
