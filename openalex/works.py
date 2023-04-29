@@ -26,8 +26,8 @@ class Works:
         self.data = self.req.json()
         
     def new(self):
-        title = self.data['title']
-        return title
+        titles = self.data['title']
+        return titles
 
     def bibtex(self):
         """
