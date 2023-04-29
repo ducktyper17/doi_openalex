@@ -27,7 +27,9 @@ class Works:
         
     def new(self):
         titles = self.data['title']
-        return titles
+        volume = self.data['biblio']['volume']
+        issue = self.data['biblio']['issue']
+        return titles, volume, issue
 
     def bibtex(self):
         """
