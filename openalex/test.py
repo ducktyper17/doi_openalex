@@ -17,8 +17,10 @@ volume = 5
 issue = 6
 
 def test_bibtex():
-    w = Works("https://doi.org/10.1021/acscatal.5b00538")
-  
-    assert title, volume, issue == w.new()
+ w = Works("https://doi.org/10.1021/acscatal.5b00538")
+ x = w.new()
+ assert title == x[0]
+ assert title == x[1]
+ assert title == x[2]
    
 
