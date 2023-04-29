@@ -23,7 +23,7 @@ ER  -"""
 ref_bibtex = """author = John R. Kitchin,
  journal = ACS Catalysis,
  title = Examples of Effective Data Sharing in Scientific Publishing,
- volume  =5,
+ volume  = 5,
  issue  = 6,  
  pages = 3894-3899,
  year = 2015"""
