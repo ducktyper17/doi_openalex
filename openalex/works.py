@@ -26,7 +26,7 @@ class Works:
         self.data = self.req.json
        
     def bibtex(self):
-        author = self.data['author']
+        author = self.data['authorship']['author']
         title = self.data['title']
         journal = self.data['host_venue']['display_name']
         volume = self.data['biblio']['volume']
