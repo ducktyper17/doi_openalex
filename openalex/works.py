@@ -48,14 +48,14 @@ class Works:
         doi = self.data['doi']
         number = issue
 
-        bibtex = f"""author = {author},
+        bibtex = f"author = {author},
           journal = {journal},
           title = {title},
           volume = {volume},
           issue = {issue},
           pages = {pages},
           year = {{year}
-        """
+        "
  
         return bibtex
               
