@@ -2,7 +2,6 @@
 Tests to ensure both RIS and BibTex version.
 """
 import re
-from Ipython.display import HTML
 from .works import Works
 
 ref_ris = """TY  - JOUR
