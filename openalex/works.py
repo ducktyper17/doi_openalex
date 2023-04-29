@@ -48,7 +48,8 @@ class Works:
         title = {title},
         volume = {volume},
         issue = {issue}, 
-        pages = {pages}, year = {year}"""
+        pages = {pages},
+        year = {year}"""
  
         return bibtex
               
