@@ -52,6 +52,7 @@ class Works:
         year = {year}"""
  
         return bibtex
+
               
 
             
