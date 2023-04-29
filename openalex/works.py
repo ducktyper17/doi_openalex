@@ -2,7 +2,6 @@
 Module for working with scholarly works from the OpenAlex API.
 """
 
-import base64
 import requests
 
 
