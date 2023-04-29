@@ -9,5 +9,4 @@ def test_file():
     Tests to check working function in package.
     """
     won = Works("https://doi.org/10.1021/acscatal.5b00538")
-    print("test works")
-    assert TITLE == won.new()
+    return(assert TITLE == won.new())
