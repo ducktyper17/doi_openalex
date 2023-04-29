@@ -29,7 +29,7 @@ class Works:
         titles = self.data['title']
         volume = self.data['biblio']['volume']
         issue = self.data['biblio']['issue']
-        return titles, volume, issue
+        return titles
 
     def bibtex(self):
         """
