@@ -24,6 +24,7 @@ class Works:
         self.oaid = oaid
         self.req = requests.get(f'https://api.openalex.org/works/{oaid}')
         self.data = self.req.json()
+        
     def new(self):
         title = self.data['title']
         return title
