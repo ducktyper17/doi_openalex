@@ -10,7 +10,6 @@ setup(name='openalex',
       description='bibtex and ris utilities',
       maintainer='saaksshi',
       maintainer_email='sjilhewa@andrew.cmu.edu',
-      setup_requires=[IPython]
       license='MIT',
       packages=['openalex'],
       scripts=[],
