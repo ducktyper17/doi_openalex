@@ -49,12 +49,12 @@ class Works:
         number = issue
 
         bibtex = f"""author = {author},
-          journal = {journal},
-          title = {title},
-          volume = {volume},
-          issue = {issue},
-          pages = {pages},
-          year = {year}"""
+        journal = {journal},
+        title = {title},
+        volume = {volume},
+        issue = {issue},
+        pages = {pages},
+        year = {year}"""
  
         return bibtex
               
