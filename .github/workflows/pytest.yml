@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           pip install requests click pytest
-          pytest -v openalex/tes.py
+          pytest -v openalex/test_file.py
