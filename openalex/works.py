@@ -49,6 +49,7 @@ class Works:
         number = issue
 
         bibtex = f"author = {author}"
+        return bibtex
         
 
     def bibtex(self):
